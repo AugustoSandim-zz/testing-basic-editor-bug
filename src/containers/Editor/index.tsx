@@ -8,6 +8,8 @@ import * as ActionCreators from "../../action-creators/index";
  * Segundo o aluno, o mesmo não fechou o aplicativo do Ipad (navegador)
  * e quando chegou em casa colocou o Ipad para carregar e ligou-o, após isso
  * o campo de texto estava vazio, ele tentou digitar algo e acabou perdendo todo o texto
+ *
+ * Dica: use um estado do redux
  */
 function Editor({ editorChanges }: any): JSX.Element {
 	return (
