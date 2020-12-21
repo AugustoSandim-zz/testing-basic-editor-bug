@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import * as ActionCreators from "../../action-creators/index";
+import styles from "./styles";
 // import { recurringErrors } from "../../utils";
 
 /** Bug:
@@ -13,13 +14,14 @@ import * as ActionCreators from "../../action-creators/index";
  */
 function Editor({ editorChanges }: any): JSX.Element {
 	return (
-		<div className="wrapper">
+		<div style={styles.wrapper}>
 			{/** Adicionar um debounce em toda chamada da editorChanges de 5 sec de espera */}
 			<textarea
 				id="text"
+				style={styles.textarea}
 				onChange={(event) => editorChanges(event.target.value)}
 			/>
-			<div className="view">
+			<div style={styles.view}>
 				{/** Mostrar os dados do state.editor aqui:
 				 * Lembre-se:
 				 * - Deve ser retirado todos espaços duplicados e paragrafos duplicados.
