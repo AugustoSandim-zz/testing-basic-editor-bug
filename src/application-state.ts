@@ -4,10 +4,10 @@ export interface ApplicationState {
 	editor: string;
 }
 
-export const defaultState = () => {
+export const defaultState: () => ApplicationState = () => {
 	let editor = '';
 
-	if(window.localStorage.getItem('editor')) {
+	if(typeof window !== 'undefined' && window.localStorage && window.localStorage.getItem('editor')) {
 		// Lógica para recuperar o estado do editor na memória do browser
 		editor = window.localStorage.getItem('editor');
 	}

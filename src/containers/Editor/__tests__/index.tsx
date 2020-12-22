@@ -10,11 +10,33 @@ import updateState from "../../../reducers/index";
 
 describe("The <Editor /> Component", () => {
 	it("renders correctly", () => {
-		const store = createStore(updateState);
+    const store = createStore(updateState);
+
+    let localStorageMock = (function() {
+      let _store: any = {};
+      return {
+        getItem: function(key: string) {
+          return _store[key];
+        },
+        setItem: function(key: string, value: any) {
+          _store[key] = value.toString();
+        },
+        clear: function() {
+          _store = {};
+        },
+        removeItem: function(key: string) {
+          delete _store[key];
+        }
+      };
+    })();
+
+    localStorageMock.setItem('editor', 'teste de persistencia');
+
+    Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
 		const wrapper = render(
 			<Provider store={store}>
-				<Editor {...{} as any}/>
+				<Editor />
 			</Provider>
 		);
 

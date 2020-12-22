@@ -5,7 +5,7 @@ import * as Actions from '../../action-creators';
 describe('The root reducer', () => {
   it('returns the input state for an unknown action', () => {
     const state = updateState(defaultState(), {type: undefined});
-    expect(state).toEqual(defaultState);
+    expect(state).toEqual(defaultState());
   });
 
   it('updates the greeting correctly', () => {
