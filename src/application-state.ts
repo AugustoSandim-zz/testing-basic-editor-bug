@@ -4,8 +4,17 @@ export interface ApplicationState {
 	editor: string;
 }
 
-export const defaultState: ApplicationState = {
-	count: 0,
-	greeting: "React-TypeScript-Redux Example",
-	editor: "",
+export const defaultState = () => {
+	let editor = '';
+
+	if(window.localStorage.getItem('editor')) {
+		// Lógica para recuperar o estado do editor na memória do browser
+		editor = window.localStorage.getItem('editor');
+	}
+
+	return {
+		count: 0,
+		greeting: "React-TypeScript-Redux Example",
+		editor,
+	}
 };

@@ -11,7 +11,7 @@ import * as ActionTypes from "../action-types/index";
 type Action = UpdateGreetingAction | IncrementAction | EditAction;
 
 const updateState = (
-	state: ApplicationState = defaultState,
+	state: ApplicationState = defaultState(),
 	action: Action
 ) => {
 	switch (action.type) {

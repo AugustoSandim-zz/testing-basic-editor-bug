@@ -14,7 +14,7 @@ describe("The <Editor /> Component", () => {
 
 		const wrapper = render(
 			<Provider store={store}>
-				<Editor />
+				<Editor {...{} as any}/>
 			</Provider>
 		);
 

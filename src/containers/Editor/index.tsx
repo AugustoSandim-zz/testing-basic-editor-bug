@@ -12,13 +12,14 @@ import styles from "./styles";
  *
  * Dica: use um estado do redux
  */
-function Editor({ editorChanges }: any): JSX.Element {
+function Editor({ editorValue, editorChanges }: any): JSX.Element {
 	return (
 		<div style={styles.wrapper}>
 			{/** Adicionar um debounce em toda chamada da editorChanges de 5 sec de espera */}
 			<textarea
 				id="text"
-				style={styles.textarea}
+        style={styles.textarea}
+        defaultValue={editorValue}
 				onChange={(event) => editorChanges(event.target.value)}
 			/>
 			<div style={styles.view}>
@@ -34,7 +35,9 @@ function Editor({ editorChanges }: any): JSX.Element {
 	);
 }
 
-export default connect(null, (dispatch) => ({
+export default connect((state) => ({
+  editorValue: state.editor
+}), (dispatch) => ({
 	editorChanges: (value: string) =>
 		dispatch(ActionCreators.editorChanges(value)),
 }))<{}>(Editor);

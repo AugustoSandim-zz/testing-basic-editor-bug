@@ -31,6 +31,11 @@ export function increment(): IncrementAction {
 }
 
 export function editorChanges(value: string): EditAction {
+  if(typeof window !== 'undefined') {
+    // Lógica para definir o estado do editor na memória do browser
+    window.localStorage.setItem('editor', value);
+  }
+
 	return {
 		type: ActionTypes.EDIT,
 		editor: value,
