@@ -58,17 +58,3 @@ Depois do setup acima, você deve seguir as seguintes instruções, para constru
 ### Pontos de atenção
 
 1. Fazer o fork do projeto e fazer um pull request com as correções feitas
-
-### Requisitos obrigatórios
-
-> todas as ferramentas citadas abaixo são apenas exemplos, você pode usar a que preferir.
-
-1. Escreva o código da melhor forma possível, utilizando typescript.
-1. Não usar geradores como yeoman, angular-cli, create-react-app.
-1. Utilizar um pré-processador CSS de sua preferência.
-1. Testes, você pode usar jest, cypress.
-1. Documentação, nos conte como usar seu projeto em doc/README.md, como rodar os testes, subir a aplicação, etc.
-1. Automação de tarefas, você pode usar ferramentas como Gulp, Grunt, Webpack.
-1. Ser fiel ao .psd.
-1. Crossbrowser, sua aplicação deve funcionar nos principais navegadores (IE11+, Firefox, Safari, Chrome).
-1. O layout deve ser responsivo
